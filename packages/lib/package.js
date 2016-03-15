@@ -1,11 +1,11 @@
 Package.describe({
   name: 'react-packages:lib', 
   summary: 'third party libraries and global namespace.',
-  version: '0.0.1'
+  version: '0.1.0'
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom(['METEOR@1.0']); 
+  api.versionsFrom(['METEOR@1.3-rc.1']); 
   
   var packages = [
     'accounts-base@1.2.2', // A user account system
@@ -23,12 +23,12 @@ Package.onUse(function (api) {
     'jquery@1.11.4', // Manipulate the DOM using CSS selectors
     'kadira:flow-router@2.10.1', // Carefully Designed Client Side Router for Meteor
     'meteor-base@1.0.1', // Packages that every Meteor app needs
-    'meteorhacks:fast-render@2.13.0', // Render your app before the DDP connection even comes alive - magic?
-    'meteorhacks:npm@1.5.0', // Use npm modules with your Meteor App
+    // 'meteorhacks:fast-render@2.13.0', // Render your app before the DDP connection even comes alive - magic?
+    // 'meteorhacks:npm@1.5.0', // Use npm modules with your Meteor App
     'meteorhacks:ssr@2.2.0', // Server Side Rendering for Meteor with Blaze
-    'mike:mocha@0.6.6', // Run mocha tests in the browser
+    // 'mike:mocha@0.6.6', // Run mocha tests in the browser
     'mongo@1.1.3', // Adaptor for using MongoDB and Minimongo over DDP
-    'npm-container@1.2.0', // Contains all your npm dependencies
+    // 'npm-container@1.2.0', // Contains all your npm dependencies
     'react-meteor-data@0.2.4', // React mixin for reactively tracking Meteor data
     'reactive-dict@1.1.3', // Reactive dictionary
     'reactive-var@1.0.6', // Reactive variable
@@ -43,6 +43,7 @@ Package.onUse(function (api) {
     'tracker@1.0.9', // Dependency tracker to allow reactive callbacks
     'twbs:bootstrap@3.3.6', // The most popular front-end framework for developing responsive, mobile first projects on the web.
     'zimme:collection-timestampable@1.0.9', // Add timestamps to collections
+    'react@0.14.3', // Everything you need to use React with Meteor.
   ];
 
   api.use(packages);

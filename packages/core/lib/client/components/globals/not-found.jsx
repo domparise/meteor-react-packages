@@ -1,4 +1,4 @@
-// var React = Npm.require('react');
+import React from 'react';
 
 NotFound = React.createClass({
   render() {

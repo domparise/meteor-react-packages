@@ -1,7 +1,6 @@
-// import React from 'react';
-// import {mount} from 'react-mounter';
+import React from 'react';
+import {mount} from 'react-mounter';
 
-// var mount = Meteor.npmRequire('react-mounter');
 /*
   Router Config
 */

@@ -5,3 +5,4 @@
 # but you can also edit it by hand.
 
 react-packages:lib
+react-packages:core
