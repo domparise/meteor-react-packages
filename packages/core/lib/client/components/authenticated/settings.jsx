@@ -1,6 +1,6 @@
-import React from 'react';
+// var React = Npm.require('react');
 
-export const Settings = React.createClass({
+Settings = React.createClass({
   render() {
     return (
       <div>YOLO SETINGS</div>

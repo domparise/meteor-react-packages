@@ -1,4 +1,4 @@
-import React from 'react';
+// var React = Npm.require('react');
 
 RecoverPassword = React.createClass({
   componentDidMount() {

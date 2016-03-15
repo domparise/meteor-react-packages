@@ -1,8 +1,6 @@
-import React from 'react';
-import {AuthenticatedNavigation} from './authenticated-navigation.jsx';
-import {PublicNavigation} from './public-navigation.jsx';
+// var React = Npm.require('react');
 
-export const AppHeader = React.createClass({
+AppHeader = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData () {
     return {

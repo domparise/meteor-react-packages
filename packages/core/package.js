@@ -4,6 +4,12 @@ Package.describe({
   version: '0.0.1'
 });
 
+Npm.depends({
+  "react": "0.14.7",
+  "react-dom": "0.14.7",
+  "react-mounter": "1.0.0",
+});
+
 function addPackagesAndVersion (api) {
   api.versionsFrom("METEOR@1.0");
   var packages = [
@@ -14,7 +20,12 @@ function addPackagesAndVersion (api) {
 };
 
 function addSharedFiles (api) {
+  var path = 'lib/both',
+  modules = path+'/modules';
   api.addFiles([
+    modules+'/_modules.js',
+    modules+'/startup.js',
+    path+'/startup.js',
   ], ['client', 'server']); 
 }
 
@@ -22,14 +33,9 @@ function addClientFiles (api) {
   var path = 'lib/client',
   routes = path+'/routes',
   modules = path+'/modules',
-  components = path+'/components';
+  components = path+'/components',
+  styl = path+'/stylesheets';
   api.addFiles([
-    modules+'/_modules.js',
-    modules+'/login.js',
-    modules+'/recover-password.js',
-    modules+'/reset-passworf.js',
-    modules+'/signup.js',
-    modules+'/startup.js',
     components+'/authenticated/dashboard.jsx',
     components+'/authenticated/settings.jsx',
     components+'/globals/authenticated-navigation.jsx',
@@ -43,9 +49,18 @@ function addClientFiles (api) {
     components+'/public/recover-password.jsx',
     components+'/public/reset-password.jsx',
     components+'/public/signup.jsx',
-    routes+'/configure.jsx',
+    styl+'/components/login.import.styl',
+    styl+'/components/navbar.import.styl',
+    styl+'/application.styl',
+    modules+'/_modules.js',
+    modules+'/login.js',
+    modules+'/recover-password.js',
+    modules+'/reset-password.js',
+    modules+'/signup.js',
+    modules+'/startup.js',
     routes+'/public.jsx',
     routes+'/authenticated.jsx',
+    routes+'/configure.jsx',
   ], 'client');
 };
 
@@ -57,12 +72,14 @@ function addServerFiles (api) {
     modules+'/_modules.js',
     modules+'/generate-accounts.js',
     modules+'/set-environment-variables.js',
+    modules+'/startup.js',
     path+'/startup.js',
   ], 'server');
 };
 
 function addFiles (api) {
   addPackagesAndVersion(api);
+  addSharedFiles(api);
   addClientFiles(api);
   addServerFiles(api);  
 };

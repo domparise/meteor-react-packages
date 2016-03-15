@@ -1,5 +1,4 @@
-import React from 'react';
-import {AppHeader} from '../globals/header.jsx';
+// var React = Npm.require('react');
 
 Default = React.createClass({
   mixins: [ReactMeteorData],
@@ -14,10 +13,10 @@ Default = React.createClass({
     return (
       <div className="app-root">
         <AppHeader />
-            <div className="container">
-              {this.props.yield}
-            </div>
+          <div className="container">
+            {this.props.yield}
+          </div>
       </div>
-        );
+    );
     }
 });

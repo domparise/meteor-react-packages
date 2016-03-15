@@ -1,17 +1,16 @@
-import React from 'react';
-import {mount} from 'react-mounter';
-
-import {Dashboard} from '../components/authenticated/dashboard.jsx';
-import {PageContainer} from '../components/authenticated/page-container.jsx';
-import {Settings} from '../components/authenticated/settings.jsx';
-
-const authenticatedRedirect = () => {
+// import React from 'react';
+// import {mount} from 'react-mounter';
+// var mount = Meteor.npmRequire('react-mounter');
+/*
+  Authenticated Routes
+*/
+const authenticatedRedirect = () => { // authenticated redirect
   if (!Meteor.loggingIn() && !Meteor.userId()) {
     FlowRouter.go('login');
   }
 };
 
-const authenticatedRoutes = FlowRouter.group({
+authenticatedRoutes = FlowRouter.group({
   name: 'authenticated',
   triggersEnter: [authenticatedRedirect]
 });

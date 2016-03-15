@@ -1,4 +1,4 @@
-import React from 'react';
+// var React = Npm.require('react');
 
 Loading = React.createClass({
   render() {

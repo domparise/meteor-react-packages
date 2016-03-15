@@ -1,6 +1,6 @@
-import React from 'react';
+// var React = Npm.require('react');
 
-export const AuthenticatedNavigation = React.createClass({
+AuthenticatedNavigation = React.createClass({
   render () {
     return (
       <div id="navbar-collapse" className="collapse navbar-collapse">

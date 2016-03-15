@@ -1,6 +1,6 @@
-import React from 'react';
+// var React = Npm.require('react');
 
-export const PublicNavigation = React.createClass({
+PublicNavigation = React.createClass({
   render() {
     var baseUrl = 'http://localhost:3000';
     var navItems = [

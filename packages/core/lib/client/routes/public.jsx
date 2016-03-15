@@ -1,16 +1,28 @@
-import React from 'react';
-import {mount} from 'react-mounter';
+// import React from 'react';
+// import {mount} from 'react-mounter';
 
-const publicRedirect = () => {            //[1] redirect to the main page
-  if (Meteor.userId()) {                  // if a user is signed in 
-    FlowRouter.go('index');               // whenever a user enters one of the following routes [2]
+// var mount = Meteor.npmRequire('react-mounter');
+
+/*
+  Public Routes
+*/
+const publicRedirect = () => {          //[1] redirect to the main page
+  if (Meteor.userId()) {                // if a user is signed in 
+    FlowRouter.go('index');             // whenever a user enters one of the following routes [2]
   }
 };
 
-const publicRoutes = FlowRouter.group({
+publicRoutes = FlowRouter.group({
   name: 'public',
-  triggersEnter: [publicRedirect]         // [2]
+  triggersEnter: [publicRedirect]
 });
+
+// publicRoutes.route('/', {
+//   name: 'index',
+//   action (params, queryParams) {
+//     mount(Default, { yield: <Dashboard />} );
+//   }
+// });
 
 publicRoutes.route('/signup', {
   name: 'signup',

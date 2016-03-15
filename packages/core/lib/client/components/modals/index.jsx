@@ -1,6 +1,6 @@
-import React from 'react';
+// var React = Npm.require('react');
 
-export const AddStudyModal = React.createClass({
+AddStudyModal = React.createClass({
   render() {
     return (
       <div className='modal fade' id='_modal'>

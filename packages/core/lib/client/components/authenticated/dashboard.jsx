@@ -1,6 +1,6 @@
-import React from 'react';
+// var React = Npm.require('react');
 
-export const Dashboard = React.createClass({
+Dashboard = React.createClass({
   render() {
     return (
       <div id='dashboard'>
