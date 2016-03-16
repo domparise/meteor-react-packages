@@ -1,6 +1,6 @@
 import React from 'react';
 
-AddStudyModal = React.createClass({
+Modal = React.createClass({
   render() {
     return (
       <div className='modal fade' id='_modal'>

@@ -15,12 +15,6 @@ publicRoutes = FlowRouter.group({
   triggersEnter: [publicRedirect]
 });
 
-// publicRoutes.route('/', {
-//   name: 'index',
-//   action (params, queryParams) {
-//     mount(Default, { yield: <Dashboard />} );
-//   }
-// });
 
 publicRoutes.route('/signup', {
   name: 'signup',

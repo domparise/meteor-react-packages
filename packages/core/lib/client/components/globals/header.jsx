@@ -20,7 +20,7 @@ AppHeader = React.createClass({
       <nav className="navbar navbar-default" id="navbar-container" role="navigation">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" href={(!this.data.loggingIn && !this.data.userId) ? FlowRouter.path('login') : FlowRouter.path('index')}>ROUSH</a>
+            <a className="navbar-brand" href={(!this.data.loggingIn && !this.data.userId) ? FlowRouter.path('login') : FlowRouter.path('index')}>BRAND</a>
           </div>
           {this.data.userId ? <AuthenticatedNavigation /> : <PublicNavigation />}
         </div>

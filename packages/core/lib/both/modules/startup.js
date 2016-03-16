@@ -1,3 +1,1 @@
-let startup = () => {};
-
-Modules.both.startup = startup;
+Modules.both.startup = () => {};
