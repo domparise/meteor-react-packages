@@ -32,7 +32,6 @@ function addSharedFiles (api) {
 function addClientFiles (api) {
   var path = 'lib/client',
   routes = path+'/routes',
-  modules = path+'/modules',
   components = path+'/components',
   styl = path+'/stylesheets';
   api.addFiles([
@@ -52,12 +51,6 @@ function addClientFiles (api) {
     styl+'/components/login.styl',
     styl+'/components/navbar.styl',
     styl+'/application.styl',
-    modules+'/_modules.js',
-    modules+'/login.js',
-    modules+'/recover-password.js',
-    modules+'/reset-password.js',
-    modules+'/signup.js',
-    modules+'/startup.js',
     routes+'/public.jsx',
     routes+'/authenticated.jsx',
     routes+'/configure.jsx',

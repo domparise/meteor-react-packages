@@ -1,8 +1,47 @@
+let recoverPassword = ( options ) => {
+  _validate( options.form );
+};
+
+let _validate = ( form ) => {
+  $( form ).validate( validation() );
+};
+
+let validation = () => {
+  return {
+    rules: {
+      emailAddress: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      emailAddress: {
+        required: 'Need an email address here.',
+        email: 'Is this email address legit?'
+      }
+    },
+    submitHandler() { _handleRecovery(); }
+  };
+};
+
+let _handleRecovery = ( template ) => {
+  let email = $( '[name="emailAddress"]' ).val();
+
+  Accounts.forgotPassword( { email: email }, ( error ) => {
+    if ( error ) {
+      Bert.alert( error.reason, 'warning' );
+    } else {
+      Bert.alert( 'Check your inbox for a reset link!', 'success' );
+    }
+  });
+};
+
+
 import React from 'react';
 
 RecoverPassword = React.createClass({
   componentDidMount() {
-    Modules.client.recoverPassword({ form: "#recover-password" });
+    recoverPassword({ form: "#recover-password" });
   },
   handleSubmit( event ) {
     event.preventDefault();
