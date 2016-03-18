@@ -27,7 +27,7 @@ function addSharedFiles (api) {
     modules+'/startup.js',
     path+'/startup.js',
   ], ['client', 'server']); 
-}
+};
 
 function addClientFiles (api) {
   var path = 'lib/client',
@@ -68,7 +68,7 @@ function addClientFiles (api) {
 function addServerFiles (api) {
     var path = 'lib/server',
     modules = path+'/modules';
-    api.addFiles([
+  api.addFiles([
     path+'/admin/reset-password.js',
     modules+'/_modules.js',
     modules+'/generate-accounts.js',
@@ -94,5 +94,10 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
 
   addFiles(api);
+
+  var path = 'test/client/modules';
+  api.addFiles([
+    path+'/login.js'
+  ], 'server');
 
 });

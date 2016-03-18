@@ -26,21 +26,20 @@ let validation = () => {
         required: 'Need a password here.'
       }
     },
-    submitHandler() { _handleLogin(); }
+    submitHandler() { 
+      let email    = $( '[name="emailAddress"]' ).val(),
+          password = $( '[name="password"]' ).val();
+
+      Meteor.loginWithPassword( email, password, ( error ) => {
+        if ( error ) {
+          Bert.alert( error.reason, 'warning' );
+        } else {
+          Bert.alert( 'Logged in!', 'success' );
+        }
+      });
+    }
   };
 };
 
-let _handleLogin = () => {
-  let email    = $( '[name="emailAddress"]' ).val(),
-      password = $( '[name="password"]' ).val();
-
-  Meteor.loginWithPassword( email, password, ( error ) => {
-    if ( error ) {
-      Bert.alert( error.reason, 'warning' );
-    } else {
-      Bert.alert( 'Logged in!', 'success' );
-    }
-  });
-};
 
 Modules.client.login = login;

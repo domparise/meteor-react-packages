@@ -2,7 +2,7 @@ Accounts.emailTemplates.resetPassword.siteName = () => "Application Name";
 Accounts.emailTemplates.resetPassword.from     = () => "Application Name <admin@application.com>";
 Accounts.emailTemplates.resetPassword.subject  = () => "[Application Name] Reset Your Password";
 
-Accounts.emailTemplates.resetPassword.text = ( user, url ) => {
+Accounts.emailTemplates.resetPassword.text = (user, url) => {
   let emailAddress   = user.emails[0].address,
       urlWithoutHash = url.replace( '#/', '' ),
       supportEmail   = "support@application.com",
