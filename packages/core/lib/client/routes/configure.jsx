@@ -4,6 +4,14 @@ import {mount} from 'react-mounter';
 /*
   Router Config
 */
+let NotFound = React.createClass({
+  render() {
+    return (
+      <h1>404 &mdash; Not Found.</h1>
+    );
+  }
+});
+
 FlowRouter.notFound = {
   action() {
     mount( Default, { yield: <NotFound /> } );

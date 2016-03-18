@@ -12,10 +12,10 @@ Default = React.createClass({
     // this.props.yield yielded from app-route/routes/{authenticated,public}
     return (
       <div className="app-root">
-        <AppHeader />
-          <div className="container">
-            {this.props.yield}
-          </div>
+        {(!this.data.loggingIn && !this.data.user) ? <PublicHeader /> : <AuthenticatedHeader />}
+        <div className="container">
+          {this.props.yield}
+        </div>
       </div>
     );
     }

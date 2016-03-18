@@ -1,6 +1,6 @@
 import React from 'react';
 
-AppHeader = React.createClass({
+AuthenticatedHeader = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData () {
     return {
@@ -20,9 +20,14 @@ AppHeader = React.createClass({
       <nav className="navbar navbar-default" id="navbar-container" role="navigation">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" href={(!this.data.loggingIn && !this.data.userId) ? FlowRouter.path('login') : FlowRouter.path('index')}>BRAND</a>
+            <a className="navbar-brand" href={FlowRouter.path('index')}>BRAND</a>
           </div>
-          {this.data.userId ? <AuthenticatedNavigation /> : <PublicNavigation />}
+          <div id="navbar-collapse" className="collapse navbar-collapse">
+            <ul className="nav navbar-nav navbar-right navbar-top-links">
+              <li> <a href={FlowRouter.path('settings')}>SETTINGS</a></li>
+              <li onClick={Meteor.logout}><a href="#">Log Out</a></li> 
+            </ul>
+          </div>
         </div>
       </nav>
     );
