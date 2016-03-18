@@ -63,10 +63,6 @@ function addServerFiles (api) {
     modules = path+'/modules';
   api.addFiles([
     path+'/admin/reset-password.js',
-    modules+'/_modules.js',
-    modules+'/generate-accounts.js',
-    modules+'/set-environment-variables.js',
-    modules+'/startup.js',
     path+'/startup.js',
   ], 'server');
 };
