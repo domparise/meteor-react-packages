@@ -30,8 +30,7 @@ function addClientFiles (api) {
 };
 
 function addServerFiles (api) {
-  var path = 'lib/server',
-  modules = path+'/modules';
+  var path = 'lib/server';
   api.addFiles([
     path+'/admin/reset-password.js',
     path+'/startup.js',
@@ -54,9 +53,8 @@ Package.onTest(function (api) {
 
   addFiles(api);
 
-  var path = 'test/client/modules';
   api.addFiles([
-    path+'/login.js'
-  ], 'server');
+    'test/client/modules/login.js'
+  ], 'client');
 
 });

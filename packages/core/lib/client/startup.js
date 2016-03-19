@@ -3,11 +3,10 @@ Meteor.startup(() => {
 
 
   /*
-    Router Config
+    authenticated routing 
   */
-  Accounts.onLogin(() => {
+  Accounts.onLogin(() => { // when user logs in, route them to whatever route they log in with
     let currentRoute = FlowRouter.current();
-    console.log(currentRoute);
     if (currentRoute && currentRoute.route.group.name === 'public') {
         FlowRouter.go('index');
     } else {
@@ -15,13 +14,12 @@ Meteor.startup(() => {
     }
   });
 
-  if (Meteor.isClient) {
-    Tracker.autorun( () => {
-      if (!Meteor.userId() && FlowRouter.current().route) {
-        FlowRouter.go('login');
-      }
-    });
-  }
+  // if user isnt logged in and tries to reach an auth'd path, redirect to login
+  Tracker.autorun( () => {
+    if (!Meteor.userId() && FlowRouter.current().route.group.name === 'authenticated') {
+      FlowRouter.go('login');
+    }
+  });
 
   
 });

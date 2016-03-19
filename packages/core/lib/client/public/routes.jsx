@@ -18,34 +18,34 @@ const publicRedirect = () => {          //[1] redirect to the main page
   }
 };
 
-let app = FlowRouter.group({
+let routes = FlowRouter.group({
   name: 'public',
   triggersEnter: [publicRedirect]
 });
 
 
-app.route('/signup', {
+routes.route('/signup', {
   name: 'signup',
   action () {
     mount(Layout, { yield: <Signup /> });
   }
 });
 
-app.route('/login', {
+routes.route('/login', {
   name: 'login',
   action () {
     mount(Layout, { yield: <Login /> });
   }
 });
 
-app.route('/recover-password', {
+routes.route('/recover-password', {
   name: 'recover-password',
   action () {
     mount(Layout, { yield: <RecoverPassword /> });
   }
 });
 
-app.route('/reset-password/:token', {
+routes.route('/reset-password/:token', {
   name: 'reset-password',
   action () {
     mount(Layout, { yield: <ResetPassword /> });

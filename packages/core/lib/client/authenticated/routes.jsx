@@ -16,19 +16,19 @@ const authenticatedRedirect = () => { // authenticated redirect
   }
 };
 
-let app = FlowRouter.group({
+let routes = FlowRouter.group({
   name: 'authenticated',
   triggersEnter: [authenticatedRedirect]
 });
 
-app.route('/', {
+routes.route('/', {
   name: 'index',
   action (params, queryParams) {
     mount(Layout, { yield: <Dashboard />} );
   }
 });
 
-app.route( '/settings', {
+routes.route( '/settings', {
   name: 'settings',
   action(params, queryParams) {
     mount(Layout, { yield: <Settings />} );
