@@ -1,7 +1,7 @@
 import React from 'react';
 
 let Header = React.createClass({
-  render() {
+  render () {
     return (
       <nav className="navbar navbar-default" id="navbar-container" role="navigation">
         <div className="container-fluid">
@@ -20,7 +20,7 @@ let Header = React.createClass({
   }
 });
 
-AuthenticatedLayout = React.createClass({
+export const Layout = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData () {
     return {
@@ -28,8 +28,7 @@ AuthenticatedLayout = React.createClass({
       user: Meteor.user()
     };
   },
-    render () {
-    // this.props.yield yielded from app-route/routes/{authenticated,public}
+  render () {
     return (
       <div className="app-root">
         <Header />

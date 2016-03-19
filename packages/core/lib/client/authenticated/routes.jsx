@@ -1,6 +1,12 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
+import {Layout} from './layout.jsx';
+import {
+  Dashboard,
+  Settings,
+} from './pages/index.jsx';
+
 /*
   Authenticated Routes
 */
@@ -10,21 +16,21 @@ const authenticatedRedirect = () => { // authenticated redirect
   }
 };
 
-authenticatedRoutes = FlowRouter.group({
+let app = FlowRouter.group({
   name: 'authenticated',
   triggersEnter: [authenticatedRedirect]
 });
 
-authenticatedRoutes.route('/', {
+app.route('/', {
   name: 'index',
   action (params, queryParams) {
-    mount(AuthenticatedLayout, { yield: <Dashboard />} );
+    mount(Layout, { yield: <Dashboard />} );
   }
 });
 
-authenticatedRoutes.route( '/settings', {
+app.route( '/settings', {
   name: 'settings',
   action(params, queryParams) {
-    mount(AuthenticatedLayout, { yield: <Settings />} );
+    mount(Layout, { yield: <Settings />} );
   }
 });

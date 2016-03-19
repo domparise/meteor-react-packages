@@ -24,7 +24,7 @@ let Header = React.createClass({
   }
 });
 
-PublicLayout = React.createClass({
+export const Layout = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData () {
     return {

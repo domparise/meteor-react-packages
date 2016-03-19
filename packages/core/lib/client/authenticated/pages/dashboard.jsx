@@ -1,6 +1,6 @@
 import React from 'react';
 
-Dashboard = React.createClass({
+export const Dashboard = React.createClass({
   render() {
     return (
       <div id='dashboard'>

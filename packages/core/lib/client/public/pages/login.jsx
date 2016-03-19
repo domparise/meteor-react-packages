@@ -45,7 +45,7 @@ let _handleLogin = () => {
 
 import React from 'react';
 
-Login = React.createClass({
+export const Login = React.createClass({
   componentDidMount () {
     login({ form: "#login" });
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 
-Modal = React.createClass({
+export const Modal = React.createClass({
   render() {
     return (
       <div className='modal fade' id='_modal'>

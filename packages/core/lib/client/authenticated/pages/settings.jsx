@@ -1,6 +1,6 @@
 import React from 'react';
 
-Settings = React.createClass({
+export const Settings = React.createClass({
   render() {
     return (
       <div>YOLO SETINGS</div>

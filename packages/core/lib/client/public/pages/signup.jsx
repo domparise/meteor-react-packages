@@ -49,7 +49,7 @@ let _handleSignup = () => {
 
 import React from 'react';
 
-Signup = React.createClass({
+export const Signup = React.createClass({
   componentDidMount() {
     signup({ form: "#signup" });
   },

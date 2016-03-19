@@ -20,31 +20,18 @@ function addPackagesAndVersion (api) {
 };
 
 function addClientFiles (api) {
-  var path = 'lib/client',
-  authenticated = path+'/authenticated',
-  _public = path+'/public',
-  styl = path+'/stylesheets';
+  var path = 'lib/client';
   api.addFiles([
-    authenticated+'/modal.jsx',
-    authenticated+'/dashboard.jsx',
-    authenticated+'/settings.jsx',
-    authenticated+'/layout.jsx',
-    authenticated+'/routes.jsx',
-    _public+'/login.jsx',
-    _public+'/recover-password.jsx',
-    _public+'/reset-password.jsx',
-    _public+'/signup.jsx',
-    _public+'/layout.jsx',
-    _public+'/routes.jsx',
+    path+'/authenticated/routes.jsx',
+    path+'/public/routes.jsx',
     path+'/index.styl',
     path+'/startup.js'
   ], 'client');
 };
 
-
 function addServerFiles (api) {
-    var path = 'lib/server',
-    modules = path+'/modules';
+  var path = 'lib/server',
+  modules = path+'/modules';
   api.addFiles([
     path+'/admin/reset-password.js',
     path+'/startup.js',

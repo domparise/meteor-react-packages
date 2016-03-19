@@ -1,6 +1,14 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
+import {Layout} from './layout.jsx';
+import {
+  Login,
+  Signup,
+  RecoverPassword,
+  ResetPassword
+} from './pages/index.jsx';
+
 /*
   Public Routes
 */
@@ -10,37 +18,37 @@ const publicRedirect = () => {          //[1] redirect to the main page
   }
 };
 
-publicRoutes = FlowRouter.group({
+let app = FlowRouter.group({
   name: 'public',
   triggersEnter: [publicRedirect]
 });
 
 
-publicRoutes.route('/signup', {
+app.route('/signup', {
   name: 'signup',
   action () {
-    mount(PublicLayout, { yield: <Signup /> });
+    mount(Layout, { yield: <Signup /> });
   }
 });
 
-publicRoutes.route('/login', {
+app.route('/login', {
   name: 'login',
   action () {
-    mount(PublicLayout, { yield: <Login /> });
+    mount(Layout, { yield: <Login /> });
   }
 });
 
-publicRoutes.route('/recover-password', {
+app.route('/recover-password', {
   name: 'recover-password',
   action () {
-    mount(PublicLayout, { yield: <RecoverPassword /> });
+    mount(Layout, { yield: <RecoverPassword /> });
   }
 });
 
-publicRoutes.route('/reset-password/:token', {
+app.route('/reset-password/:token', {
   name: 'reset-password',
   action () {
-    mount(PublicLayout, { yield: <ResetPassword /> });
+    mount(Layout, { yield: <ResetPassword /> });
   }
 });
 
@@ -57,6 +65,6 @@ let NotFound = React.createClass({
 
 FlowRouter.notFound = {
   action() {
-    mount( PublicLayout, { yield: <NotFound /> } );
+    mount( Layout, { yield: <NotFound /> } );
   }
 };

@@ -49,7 +49,7 @@ let _handleReset = () => {
 
 import React from 'react';
 
-ResetPassword = React.createClass({
+export const ResetPassword = React.createClass({
   componentDidMount() {
     resetPassword({ form: "#reset-password" });
   },

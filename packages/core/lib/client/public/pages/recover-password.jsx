@@ -39,7 +39,7 @@ let _handleRecovery = ( template ) => {
 
 import React from 'react';
 
-RecoverPassword = React.createClass({
+export const RecoverPassword = React.createClass({
   componentDidMount() {
     recoverPassword({ form: "#recover-password" });
   },
