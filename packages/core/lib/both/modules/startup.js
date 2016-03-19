@@ -1,1 +1,0 @@
-Modules.both.startup = () => {};
