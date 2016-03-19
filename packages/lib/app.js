@@ -1,3 +1,3 @@
 App = {};
 
-App.VERSION = '0.0.1';
+App.VERSION = '0.2.0';

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'react-packages:core',
   summary: 'react-packages core libraries.',
-  version: '0.1.0'
+  version: '0.2.0'
 });
 
 Npm.depends({
@@ -13,7 +13,7 @@ Npm.depends({
 function addPackagesAndVersion (api) {
   api.versionsFrom("METEOR@1.3-rc.1");
   var packages = [
-    'react-packages:lib@0.1.0',
+    'react-packages:lib@0.2.0',
   ];
   api.use(packages);
   api.imply(packages);
