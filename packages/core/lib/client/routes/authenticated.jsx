@@ -18,13 +18,13 @@ authenticatedRoutes = FlowRouter.group({
 authenticatedRoutes.route('/', {
   name: 'index',
   action (params, queryParams) {
-    mount(Default, { yield: <Dashboard />} );
+    mount(AuthenticatedLayout, { yield: <Dashboard />} );
   }
 });
 
 authenticatedRoutes.route( '/settings', {
   name: 'settings',
   action(params, queryParams) {
-    mount(Default, { yield: <Settings />} );
+    mount(AuthenticatedLayout, { yield: <Settings />} );
   }
 });

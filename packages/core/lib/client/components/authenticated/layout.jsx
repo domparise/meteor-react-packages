@@ -1,20 +1,6 @@
 import React from 'react';
 
-AuthenticatedHeader = React.createClass({
-  mixins: [ReactMeteorData],
-  getMeteorData () {
-    return {
-      userId: Meteor.userId(),
-      user: Meteor.user(),
-      logginIn: Meteor.loggingIn()
-    };
-  },
-  componentDidMount () {
-    // Tracker.autorun(() => {
-    //   this.forceUpdate();
-    //   return Meteor.userId();
-    // });
-  },
+let Header = React.createClass({
   render() {
     return (
       <nav className="navbar navbar-default" id="navbar-container" role="navigation">
@@ -32,4 +18,25 @@ AuthenticatedHeader = React.createClass({
       </nav>
     );
   }
+});
+
+AuthenticatedLayout = React.createClass({
+  mixins: [ReactMeteorData],
+  getMeteorData () {
+    return {
+      loggingIn: Meteor.loggingIn(),
+      user: Meteor.user()
+    };
+  },
+    render () {
+    // this.props.yield yielded from app-route/routes/{authenticated,public}
+    return (
+      <div className="app-root">
+        <Header />
+        <div className="container">
+          {this.props.yield}
+        </div>
+      </div>
+    );
+    }
 });

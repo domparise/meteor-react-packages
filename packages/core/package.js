@@ -35,22 +35,21 @@ function addClientFiles (api) {
   components = path+'/components',
   styl = path+'/stylesheets';
   api.addFiles([
-    components+'/authenticated/header.jsx',
+    components+'/authenticated/modal.jsx',
+    components+'/authenticated/layout.jsx',
     components+'/authenticated/dashboard.jsx',
     components+'/authenticated/settings.jsx',
-    components+'/public/header.jsx',
+    components+'/public/layout.jsx',
     components+'/public/login.jsx',
     components+'/public/recover-password.jsx',
     components+'/public/reset-password.jsx',
     components+'/public/signup.jsx',
-    components+'/modals/index.jsx',
-    components+'/layouts/default.jsx',
     styl+'/components/login.styl',
     styl+'/components/navbar.styl',
     styl+'/application.styl',
     routes+'/public.jsx',
     routes+'/authenticated.jsx',
-    routes+'/configure.jsx',
+    path+'/startup.js'
   ], 'client');
 };
 

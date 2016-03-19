@@ -19,27 +19,44 @@ publicRoutes = FlowRouter.group({
 publicRoutes.route('/signup', {
   name: 'signup',
   action () {
-    mount(Default, { yield: <Signup /> });
+    mount(PublicLayout, { yield: <Signup /> });
   }
 });
 
 publicRoutes.route('/login', {
   name: 'login',
   action () {
-    mount(Default, { yield: <Login /> });
+    mount(PublicLayout, { yield: <Login /> });
   }
 });
 
 publicRoutes.route('/recover-password', {
   name: 'recover-password',
   action () {
-    mount(Default, { yield: <RecoverPassword /> });
+    mount(PublicLayout, { yield: <RecoverPassword /> });
   }
 });
 
 publicRoutes.route('/reset-password/:token', {
   name: 'reset-password',
   action () {
-    mount(Default, { yield: <ResetPassword /> });
+    mount(PublicLayout, { yield: <ResetPassword /> });
   }
 });
+
+/*
+  Configure the not found page
+*/
+let NotFound = React.createClass({
+  render() {
+    return (
+      <h1>404 &mdash; Not Found.</h1>
+    );
+  }
+});
+
+FlowRouter.notFound = {
+  action() {
+    mount( PublicLayout, { yield: <NotFound /> } );
+  }
+};
